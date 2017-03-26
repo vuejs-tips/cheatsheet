@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "ruby src/build.rb",
-    "screenshot": "node src/screenshot.js"
+    "screenshot": "node src/screenshot.js",
+    "dev": "nodemon -V -e '*' -w src src/build.rb"
   },
   "devDependencies": {
     "nightmare": "^2.10.0"
