@@ -1,0 +1,16 @@
+{
+  "name": "cheat-sheet",
+  "version": "1.0.0",
+  "description": "Vue.js complete API Cheat Sheet",
+  "main": "index.js",
+  "keywords": ["vue", "vuejs", "cheatsheet"],
+  "author": "Marcos Neves <marcos.neves@gmail.com> (http://neves.github.io/)",
+  "license": "MIT",
+  "scripts": {
+    "build": "ruby src/build.rb",
+    "screenshot": "node src/screenshot.js"
+  },
+  "devDependencies": {
+    "nightmare": "^2.10.0"
+  }
+}

@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js 2.2.4 Complete API Cheat Sheet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css" /> -->
+<style>
+body {
+  background-color: #343D46;
+  color: white;
+  font-size: 16px;
+  font-family: Helvetica, Arial;
+}
+
+.menu-root {
+  padding: 10px;
+  padding-bottom: 0;
+  column-gap: 10px;
+  column-count: 8;
+}
+
+.menu-root > li:nth-child(1),
+.menu-root > li:nth-child(2) {background-color: #C594C5;}
+
+.menu-root > li:nth-child(3),
+.menu-root > li:nth-child(4),
+.menu-root > li:nth-child(5),
+.menu-root > li:nth-child(6),
+.menu-root > li:nth-child(7),
+.menu-root > li:nth-child(8) {background-color: #F99157; }
+
+.menu-root > li:nth-child(9) {background-color: #6699CC}
+.menu-root > li:nth-child(10),
+.menu-root > li:nth-child(11),
+.menu-root > li:nth-child(12) {background-color: #5FB3B3}
+
+.menu-root > li:nth-child(13) {background-color: #EC5f67}
+.menu-root > li:nth-child(14) {background-color: #EAB853}
+.menu-root > li:nth-child(15) {background-color: #89B784}
+.menu-root > li:nth-child(16),
+.menu-root > li:nth-child(17),
+.menu-root > li:nth-child(18),
+.menu-root > li:nth-child(19) {background-color: #AB7967}
+
+.menu-root > li {
+  background-color: #eee;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  display: block;
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.menu-root > li > a,
+.menu-root > li > a > small {
+  font-size: 14px;
+  color: #343D46;
+}
+
+.menu-root > li > a > small {
+  float: right;
+}
+
+.menu-root ul li a small {
+  color: #C0C5CE;
+  pointer-events: none;
+}
+
+.menu-root > li > a::first-line {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.menu-root ul li a {
+  cursor: pointer;
+}
+
+.menu-root var {
+  font-size: 11px;
+  font-style: normal;
+  float: right;
+  color: #eee;
+  background-color: #343D46;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.menu-root ul li:nth-child(odd) a {
+  color: #e6e6e6;
+  background-color: rgba(0,0,0,0.05);
+}
+
+a {
+  border-radius: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: default;
+  outline: none;
+}
+
+.menu-root ul li a:hover, .menu-root ul li a:focus {
+  background-color: rgba(255,255,255,0.1);
+  color: black;
+}
+
+#modal {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#iframe {
+  z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 900px;
+  border: none;
+}
+
+#modal button {
+  z-index: 2;
+  border: 1px solid silver;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 35px;
+  font-family: monospace;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+#modal button:hover {
+  color: white;
+  background-color: black;
+}
+
+
+@media (max-width : 900px) {
+  #iframe {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    width: auto;
+  }
+}
+
+@media (max-width : 480px) {
+  .menu-root {
+    column-count: 2;
+  }
+}
+
+@media (min-width : 481px) and (max-width : 767px) {
+  .menu-root {
+    column-count: 3;
+  }
+}
+
+@media (min-width : 768px) and (max-width : 1023px) {
+  .menu-root {
+    column-count: 4;
+  }
+}
+
+@media (min-width : 1024px) and (max-width : 1279px) {
+  .menu-root {
+    column-count: 5;
+  }
+  .menu-root ul li a {
+    padding: 2px 5px;
+  }
+}
+
+@media (min-width : 1280px) and (max-width : 1439px) {
+  .menu-root {
+    column-count: 6;
+  }
+  .menu-root ul li a {
+    padding: 3px 5px;
+  }
+}
+
+@media (min-width : 1440px) and (max-width : 1679px) {
+  .menu-root {
+    column-count: 7;
+  }
+}
+
+@media (min-width : 1680px) and (max-width : 1919px) {
+  .menu-root {
+    column-count: 8;
+    font-size: 18px;
+  }
+}
+
+@media print, (min-width : 1920px) {
+  .menu-root {
+    column-count: 9;
+    font-size: 18px;
+  }
+
+  .menu-root ul li {
+    margin-bottom: 5px;
+  }
+
+  .menu-root > li:nth-child(2),
+  .menu-root > li:nth-child(4),
+  .menu-root > li:nth-child(5),
+  .menu-root > li:nth-child(8),
+  .menu-root > li:nth-child(9),
+  .menu-root > li:nth-child(12),
+  .menu-root > li:nth-child(14),
+  .menu-root > li:nth-child(16) {
+    break-after: column;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width : 1920px) {
+  a {
+    padding: 10px 5px;
+    line-height: 15px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+  <div id="modal" class="hidden">
+    <button>&times;</button>
+    <iframe id="iframe"></iframe>
+  </div>
+    <ul class='menu-root'>
+  <li>
+    <a class='section-link active' data-scroll='' href='#Global-Config'>
+      <small>
+        Global
+      </small>
+       Config
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#silent'>
+          silent
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#optionMergeStrategies'>
+          optionMergeStrategies
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#devtools'>
+          devtools
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#errorHandler'>
+          errorHandler
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#ignoredElements'>
+          ignoredElements
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#keyCodes'>
+          keyCodes
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#performance'>
+          performance 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#productionTip'>
+          productionTip 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Global-API'>
+      <small>
+        Global
+      </small>
+       API
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-extend'>
+          Vue.extend
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-nextTick'>
+          Vue.nextTick
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-set'>
+          Vue.set
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-delete'>
+          Vue.delete
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-directive'>
+          Vue.directive
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-filter'>
+          Vue.filter
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-component'>
+          Vue.component
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-use'>
+          Vue.use
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-mixin'>
+          Vue.mixin
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-compile'>
+          Vue.compile
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Vue-version'>
+          Vue.version
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Options-Data'>
+      <small>
+        Options
+      </small>
+       Data
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#data'>
+          data
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#props'>
+          props
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#propsData'>
+          propsData
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#computed'>
+          computed
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#methods'>
+          methods
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#watch'>
+          watch
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Options-DOM'>
+      <small>
+        Options
+      </small>
+       DOM
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#el'>
+          el
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#template'>
+          template
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#render'>
+          render
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#renderError'>
+          renderError 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Options-Lifecycle-Hooks'>
+      <small>
+        Options
+      </small>
+       Lifecycle Hooks
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#beforeCreate'>
+          beforeCreate
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#created'>
+          created
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#beforeMount'>
+          beforeMount
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#mounted'>
+          mounted
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#beforeUpdate'>
+          beforeUpdate
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#updated'>
+          updated
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#activated'>
+          activated
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#deactivated'>
+          deactivated
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#beforeDestroy'>
+          beforeDestroy
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#destroyed'>
+          destroyed
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Options-Assets'>
+      <small>
+        Options
+      </small>
+       Assets
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#directives'>
+          directives
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#filters'>
+          filters
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#components'>
+          components
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Options-Composition'>
+      <small>
+        Options
+      </small>
+       Composition
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#parent'>
+          parent
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#mixins'>
+          mixins
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#extends'>
+          extends
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#provide-inject'>
+          provide / inject 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Options-Misc'>
+      <small>
+        Options
+      </small>
+       Misc
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#name'>
+          name
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#delimiters'>
+          delimiters
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#functional'>
+          functional
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#model'>
+          model 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Instance-Properties'>
+      <small>
+        Instance
+      </small>
+       Properties
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-data'>
+          vm.$data
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-props'>
+          vm.$props 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-el'>
+          vm.$el
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-options'>
+          vm.$options
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-parent'>
+          vm.$parent
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-root'>
+          vm.$root
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-children'>
+          vm.$children
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-slots'>
+          vm.$slots
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-scopedSlots'>
+          vm.$scopedSlots 
+          <var>
+            2.1
+          </var>
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-refs'>
+          vm.$refs
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-isServer'>
+          vm.$isServer
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Instance-Methods-Data'>
+      <small>
+        Methods
+      </small>
+       Data
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-watch'>
+          vm.$watch
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-set'>
+          vm.$set
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-delete'>
+          vm.$delete
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Instance-Methods-Events'>
+      <small>
+        Methods
+      </small>
+       Events
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-on'>
+          vm.$on
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-once'>
+          vm.$once
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-off'>
+          vm.$off
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-emit'>
+          vm.$emit
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Instance-Methods-Lifecycle'>
+      <small>
+        Methods
+      </small>
+       Lifecycle
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-mount'>
+          vm.$mount
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-forceUpdate'>
+          vm.$forceUpdate
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-nextTick'>
+          vm.$nextTick
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#vm-destroy'>
+          vm.$destroy
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Directives'>
+      <small>
+        html
+      </small>
+       Directives
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-text'>
+          v-text
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-html'>
+          v-html
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-show'>
+          v-show
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-if'>
+          v-if
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-else'>
+          v-else
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-else-if'>
+          v-else-if 
+          <var>
+            2.1
+          </var>
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-for'>
+          v-for
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-on'>
+          v-on
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-bind'>
+          v-bind
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-model'>
+          v-model
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-pre'>
+          v-pre
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-cloak'>
+          v-cloak
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#v-once'>
+          v-once
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Special-Attributes'>
+      <small>
+        html
+      </small>
+       Attributes
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#key'>
+          key
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#ref'>
+          ref
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#slot'>
+          slot
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class='section-link' data-scroll='' href='#Built-In-Components'>
+      <small>
+        Built-In
+      </small>
+       Components
+    </a>
+    <ul class='menu-sub'>
+      <li>
+        <a class='section-link' data-scroll='' href='#component'>
+          component
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#transition'>
+          transition
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#transition-group'>
+          transition-group
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#keep-alive'>
+          keep-alive
+        </a>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#slot-1'>
+          slot
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a>
+      Keyboard 
+      <small>
+        Modifiers
+      </small>
+    </a>
+    <ul>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+          <small>
+            v-on:keyup
+          </small>
+          .ctrl 
+          <var>
+            2.1
+          </var>
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+          <small>
+            v-on:keyup
+          </small>
+          .alt 
+          <var>
+            2.1
+          </var>
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+          <small>
+            v-on:keyup
+          </small>
+          .shift 
+          <var>
+            2.1
+          </var>
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+          <small>
+            v-on:keyup
+          </small>
+          .meta 
+          <var>
+            2.1
+          </var>
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .enter
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .tab
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .delete
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .esc
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .up
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .down
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .left
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+          <small>
+            v-on:keyup
+          </small>
+          .right
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a>
+      v-model 
+      <small>
+        Modifiers
+      </small>
+    </a>
+    <ul>
+      <li>
+        <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
+          <small>
+            v-model
+          </small>
+          .lazy
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
+          <small>
+            v-model
+          </small>
+          .number
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
+          <small>
+            v-model
+          </small>
+          .trim
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a>
+      Event 
+      <small>
+        Modifiers
+      </small>
+    </a>
+    <ul>
+      <li>
+        <a href='https://vuejs.org/v2/guide/components.html#Using-v-on-with-Custom-Events'>
+          <small>
+            v-on:click
+          </small>
+          .native
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .stop
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .prevent
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .capture
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .self
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .once 
+          <var>
+            2.1.4
+          </var>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a>
+      Mouse 
+      <small>
+        Modifiers
+      </small>
+    </a>
+    <ul>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .left 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .right 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+      <li>
+        <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+          <small>
+            v-on:click
+          </small>
+          .middle 
+          <var>
+            2.2
+          </var>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<script>
+$ = document.querySelector.bind(document)
+$on = document.addEventListener.bind(document)
+function ready (fn) {
+  document.readyState != 'loading' ? fn() : $on('DOMContentLoaded', fn)
+}
+
+function hideModal () {
+  $('#modal').classList.add('hidden')
+  $('#iframe').src = '' // hide from browser search
+}
+
+ready(function () {
+  $('#modal button, #modal').addEventListener('click', function () {
+    hideModal()
+  })
+
+  $on('keydown', function (evt) {
+      if (evt.keyCode === 27) {
+        hideModal()
+      }
+  })
+
+  $on('click', function (evt) {
+    var href
+    if (href = evt.target.getAttribute('href')) {
+      evt.preventDefault()
+      if (href.charAt(0) === '#') {
+        href = 'https://vuejs.org/v2/api/' + href
+      }
+      $('#iframe').src = href
+      $('#modal').classList.remove('hidden')
+    }
+  })
+})
+
+</script>
+</body>
+
+</html>

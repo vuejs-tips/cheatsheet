@@ -1,0 +1,241 @@
+body {
+  background-color: #343D46;
+  color: white;
+  font-size: 16px;
+  font-family: Helvetica, Arial;
+}
+
+.menu-root {
+  padding: 10px;
+  padding-bottom: 0;
+  column-gap: 10px;
+  column-count: 8;
+}
+
+.menu-root > li:nth-child(1),
+.menu-root > li:nth-child(2) {background-color: #C594C5;}
+
+.menu-root > li:nth-child(3),
+.menu-root > li:nth-child(4),
+.menu-root > li:nth-child(5),
+.menu-root > li:nth-child(6),
+.menu-root > li:nth-child(7),
+.menu-root > li:nth-child(8) {background-color: #F99157; }
+
+.menu-root > li:nth-child(9) {background-color: #6699CC}
+.menu-root > li:nth-child(10),
+.menu-root > li:nth-child(11),
+.menu-root > li:nth-child(12) {background-color: #5FB3B3}
+
+.menu-root > li:nth-child(13) {background-color: #EC5f67}
+.menu-root > li:nth-child(14) {background-color: #EAB853}
+.menu-root > li:nth-child(15) {background-color: #89B784}
+.menu-root > li:nth-child(16),
+.menu-root > li:nth-child(17),
+.menu-root > li:nth-child(18),
+.menu-root > li:nth-child(19) {background-color: #AB7967}
+
+.menu-root > li {
+  background-color: #eee;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  display: block;
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.menu-root > li > a,
+.menu-root > li > a > small {
+  font-size: 14px;
+  color: #343D46;
+}
+
+.menu-root > li > a > small {
+  float: right;
+}
+
+.menu-root ul li a small {
+  color: #C0C5CE;
+  pointer-events: none;
+}
+
+.menu-root > li > a::first-line {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.menu-root ul li a {
+  cursor: pointer;
+}
+
+.menu-root var {
+  font-size: 11px;
+  font-style: normal;
+  float: right;
+  color: #eee;
+  background-color: #343D46;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.menu-root ul li:nth-child(odd) a {
+  color: #e6e6e6;
+  background-color: rgba(0,0,0,0.05);
+}
+
+a {
+  border-radius: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: default;
+  outline: none;
+}
+
+.menu-root ul li a:hover, .menu-root ul li a:focus {
+  background-color: rgba(255,255,255,0.1);
+  color: black;
+}
+
+#modal {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#iframe {
+  z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 900px;
+  border: none;
+}
+
+#modal button {
+  z-index: 2;
+  border: 1px solid silver;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 35px;
+  font-family: monospace;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+#modal button:hover {
+  color: white;
+  background-color: black;
+}
+
+
+@media (max-width : 900px) {
+  #iframe {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    width: auto;
+  }
+}
+
+@media (max-width : 480px) {
+  .menu-root {
+    column-count: 2;
+  }
+}
+
+@media (min-width : 481px) and (max-width : 767px) {
+  .menu-root {
+    column-count: 3;
+  }
+}
+
+@media (min-width : 768px) and (max-width : 1023px) {
+  .menu-root {
+    column-count: 4;
+  }
+}
+
+@media (min-width : 1024px) and (max-width : 1279px) {
+  .menu-root {
+    column-count: 5;
+  }
+  .menu-root ul li a {
+    padding: 2px 5px;
+  }
+}
+
+@media (min-width : 1280px) and (max-width : 1439px) {
+  .menu-root {
+    column-count: 6;
+  }
+  .menu-root ul li a {
+    padding: 3px 5px;
+  }
+}
+
+@media (min-width : 1440px) and (max-width : 1679px) {
+  .menu-root {
+    column-count: 7;
+  }
+}
+
+@media (min-width : 1680px) and (max-width : 1919px) {
+  .menu-root {
+    column-count: 8;
+    font-size: 18px;
+  }
+}
+
+@media print, (min-width : 1920px) {
+  .menu-root {
+    column-count: 9;
+    font-size: 18px;
+  }
+
+  .menu-root ul li {
+    margin-bottom: 5px;
+  }
+
+  .menu-root > li:nth-child(2),
+  .menu-root > li:nth-child(4),
+  .menu-root > li:nth-child(5),
+  .menu-root > li:nth-child(8),
+  .menu-root > li:nth-child(9),
+  .menu-root > li:nth-child(12),
+  .menu-root > li:nth-child(14),
+  .menu-root > li:nth-child(16) {
+    break-after: column;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width : 1920px) {
+  a {
+    padding: 10px 5px;
+    line-height: 15px;
+  }
+}
