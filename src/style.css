@@ -22,18 +22,17 @@ body {
 .menu-root > li:nth-child(7),
 .menu-root > li:nth-child(8) {background-color: #F99157; }
 
-.menu-root > li:nth-child(9) {background-color: #6699CC}
+.menu-root > li:nth-child(9),
 .menu-root > li:nth-child(10),
-.menu-root > li:nth-child(11),
-.menu-root > li:nth-child(12) {background-color: #5FB3B3}
-
+.menu-root > li:nth-child(11) {background-color: #5FB3B3}
+.menu-root > li:nth-child(12) {background-color: #6699CC}
 .menu-root > li:nth-child(13) {background-color: #EC5f67}
-.menu-root > li:nth-child(14) {background-color: #EAB853}
-.menu-root > li:nth-child(15) {background-color: #89B784}
-.menu-root > li:nth-child(16),
-.menu-root > li:nth-child(17),
-.menu-root > li:nth-child(18),
-.menu-root > li:nth-child(19) {background-color: #AB7967}
+.menu-root > .directives.hooks {background-color: #8D89D1}
+.menu-root > li:nth-child(15) {background-color: #EAB853}
+.menu-root > li:nth-child(16) {background-color: #89B784}
+
+.menu-root > .modifiers {background-color: #AB7967}
+
 
 .menu-root > li {
   background-color: #eee;
@@ -148,6 +147,14 @@ a {
   background-color: black;
 }
 
+@media (min-width : 1440px) {
+  .menu-root > li:nth-child(2)
+  ,.menu-root > li:nth-child(12)
+  ,.menu-root > li:nth-child(14)
+   {
+    break-after: column;
+  }
+}
 
 @media (max-width : 900px) {
   #iframe {
@@ -217,23 +224,18 @@ a {
     margin-bottom: 5px;
   }
 
-  .menu-root > li:nth-child(2),
-  .menu-root > li:nth-child(4),
-  .menu-root > li:nth-child(5),
-  .menu-root > li:nth-child(8),
-  .menu-root > li:nth-child(9),
-  .menu-root > li:nth-child(12),
-  .menu-root > li:nth-child(14),
-  .menu-root > li:nth-child(16) {
-    break-after: column;
-  }
-
   body {
     overflow: hidden;
   }
 }
 
 @media screen and (min-width : 1920px) {
+  .menu-root > li:nth-child(8)
+  ,.menu-root > li:nth-child(16)
+   {
+    break-after: column;
+  }
+
   a {
     padding: 10px 5px;
     line-height: 15px;

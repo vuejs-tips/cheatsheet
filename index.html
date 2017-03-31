@@ -38,18 +38,17 @@ body {
 .menu-root > li:nth-child(7),
 .menu-root > li:nth-child(8) {background-color: #F99157; }
 
-.menu-root > li:nth-child(9) {background-color: #6699CC}
+.menu-root > li:nth-child(9),
 .menu-root > li:nth-child(10),
-.menu-root > li:nth-child(11),
-.menu-root > li:nth-child(12) {background-color: #5FB3B3}
-
+.menu-root > li:nth-child(11) {background-color: #5FB3B3}
+.menu-root > li:nth-child(12) {background-color: #6699CC}
 .menu-root > li:nth-child(13) {background-color: #EC5f67}
-.menu-root > li:nth-child(14) {background-color: #EAB853}
-.menu-root > li:nth-child(15) {background-color: #89B784}
-.menu-root > li:nth-child(16),
-.menu-root > li:nth-child(17),
-.menu-root > li:nth-child(18),
-.menu-root > li:nth-child(19) {background-color: #AB7967}
+.menu-root > .directives.hooks {background-color: #8D89D1}
+.menu-root > li:nth-child(15) {background-color: #EAB853}
+.menu-root > li:nth-child(16) {background-color: #89B784}
+
+.menu-root > .modifiers {background-color: #AB7967}
+
 
 .menu-root > li {
   background-color: #eee;
@@ -164,6 +163,14 @@ a {
   background-color: black;
 }
 
+@media (min-width : 1440px) {
+  .menu-root > li:nth-child(2)
+  ,.menu-root > li:nth-child(12)
+  ,.menu-root > li:nth-child(14)
+   {
+    break-after: column;
+  }
+}
 
 @media (max-width : 900px) {
   #iframe {
@@ -233,23 +240,18 @@ a {
     margin-bottom: 5px;
   }
 
-  .menu-root > li:nth-child(2),
-  .menu-root > li:nth-child(4),
-  .menu-root > li:nth-child(5),
-  .menu-root > li:nth-child(8),
-  .menu-root > li:nth-child(9),
-  .menu-root > li:nth-child(12),
-  .menu-root > li:nth-child(14),
-  .menu-root > li:nth-child(16) {
-    break-after: column;
-  }
-
   body {
     overflow: hidden;
   }
 }
 
 @media screen and (min-width : 1920px) {
+  .menu-root > li:nth-child(8)
+  ,.menu-root > li:nth-child(16)
+   {
+    break-after: column;
+  }
+
   a {
     padding: 10px 5px;
     line-height: 15px;
@@ -264,903 +266,972 @@ a {
     <button>&times;</button>
     <iframe id="iframe" src="https://vuejs.org/v2/api/"></iframe>
   </div>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+  <body>
     <ul class='menu-root'>
-  <li>
-    <a class='section-link active' data-scroll='' href='#Global-Config'>
-      <small>
-        Global
-      </small>
-       Config
-    </a>
-    <ul class='menu-sub'>
       <li>
-        <a class='section-link' data-scroll='' href='#silent'>
-          silent
+        <a class='section-link active' data-scroll='' href='#Global-Config'>
+          <small>
+            Global
+          </small>
+           Config
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#silent'>
+              silent
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#optionMergeStrategies'>
+              optionMergeStrategies
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#devtools'>
+              devtools
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#errorHandler'>
+              errorHandler
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#ignoredElements'>
+              ignoredElements
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#keyCodes'>
+              keyCodes
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#performance'>
+              performance 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#productionTip'>
+              productionTip 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#optionMergeStrategies'>
-          optionMergeStrategies
+        <a class='section-link' data-scroll='' href='#Global-API'>
+          <small>
+            Global
+          </small>
+           API
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-extend'>
+              Vue.extend
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-nextTick'>
+              Vue.nextTick
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-set'>
+              Vue.set
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-delete'>
+              Vue.delete
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-directive'>
+              Vue.directive
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-filter'>
+              Vue.filter
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-component'>
+              Vue.component
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-use'>
+              Vue.use
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-mixin'>
+              Vue.mixin
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-compile'>
+              Vue.compile
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#Vue-version'>
+              Vue.version
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#devtools'>
-          devtools
+        <a class='section-link' data-scroll='' href='#Options-Lifecycle-Hooks'>
+          <small>
+            Options
+          </small>
+           Lifecycle Hooks
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#beforeCreate'>
+              beforeCreate
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#created'>
+              created
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#beforeMount'>
+              beforeMount
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#mounted'>
+              mounted
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#beforeUpdate'>
+              beforeUpdate
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#updated'>
+              updated
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#activated'>
+              activated
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#deactivated'>
+              deactivated
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#beforeDestroy'>
+              beforeDestroy
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#destroyed'>
+              destroyed
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#errorHandler'>
-          errorHandler
+        <a class='section-link' data-scroll='' href='#Options-Data'>
+          <small>
+            Options
+          </small>
+           Data
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#data'>
+              data
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#props'>
+              props
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#propsData'>
+              propsData
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#computed'>
+              computed
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#methods'>
+              methods
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#watch'>
+              watch
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#ignoredElements'>
-          ignoredElements
+        <a class='section-link' data-scroll='' href='#Options-DOM'>
+          <small>
+            Options
+          </small>
+           DOM
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#el'>
+              el
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#template'>
+              template
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#render'>
+              render
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#renderError'>
+              renderError 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#keyCodes'>
-          keyCodes
+        <a class='section-link' data-scroll='' href='#Options-Assets'>
+          <small>
+            Options
+          </small>
+           Assets
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#directives'>
+              directives
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#filters'>
+              filters
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#components'>
+              components
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#performance'>
-          performance 
-          <var>
-            2.2
-          </var>
+        <a class='section-link' data-scroll='' href='#Options-Composition'>
+          <small>
+            Options
+          </small>
+           Composition
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#parent'>
+              parent
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#mixins'>
+              mixins
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#extends'>
+              extends
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#provide-inject'>
+              provide / inject 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a class='section-link' data-scroll='' href='#productionTip'>
-          productionTip 
-          <var>
-            2.2
-          </var>
+        <a class='section-link' data-scroll='' href='#Options-Misc'>
+          <small>
+            Options
+          </small>
+           Misc
         </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#name'>
+              name
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#delimiters'>
+              delimiters
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#functional'>
+              functional
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#model'>
+              model 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Instance-Methods-Data'>
+          <small>
+            Methods
+          </small>
+           Data
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-watch'>
+              vm.$watch
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-set'>
+              vm.$set
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-delete'>
+              vm.$delete
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Instance-Methods-Events'>
+          <small>
+            Methods
+          </small>
+           Events
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-on'>
+              vm.$on
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-once'>
+              vm.$once
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-off'>
+              vm.$off
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-emit'>
+              vm.$emit
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Instance-Methods-Lifecycle'>
+          <small>
+            Methods
+          </small>
+           Lifecycle
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-mount'>
+              vm.$mount
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-forceUpdate'>
+              vm.$forceUpdate
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-nextTick'>
+              vm.$nextTick
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-destroy'>
+              vm.$destroy
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Instance-Properties'>
+          <small>
+            Instance
+          </small>
+           Properties
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-data'>
+              vm.$data
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-props'>
+              vm.$props 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-el'>
+              vm.$el
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-options'>
+              vm.$options
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-parent'>
+              vm.$parent
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-root'>
+              vm.$root
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-children'>
+              vm.$children
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-slots'>
+              vm.$slots
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-scopedSlots'>
+              vm.$scopedSlots 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-refs'>
+              vm.$refs
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#vm-isServer'>
+              vm.$isServer
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Directives'>
+          <small>
+            html
+          </small>
+           Directives
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-text'>
+              v-text
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-html'>
+              v-html
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-show'>
+              v-show
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-if'>
+              v-if
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-else'>
+              v-else
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-else-if'>
+              v-else-if 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-for'>
+              v-for
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-on'>
+              v-on
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-bind'>
+              v-bind
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-model'>
+              v-model
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-pre'>
+              v-pre
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-cloak'>
+              v-cloak
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#v-once'>
+              v-once
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='directives hooks'>
+        <a>
+          Directives 
+          <small>
+            Hooks
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/guide/custom-directive.html#Hook-Functions'>
+              bind
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/custom-directive.html#Hook-Functions'>
+              inserted
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/custom-directive.html#Hook-Functions'>
+              update
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/custom-directive.html#Hook-Functions'>
+              componentUpdated
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/custom-directive.html#Hook-Functions'>
+              unbind
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Special-Attributes'>
+          <small>
+            html
+          </small>
+           Attributes
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#key'>
+              key
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#ref'>
+              ref
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#slot'>
+              slot
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class='section-link' data-scroll='' href='#Built-In-Components'>
+          <small>
+            Built-In
+          </small>
+           Components
+        </a>
+        <ul class='menu-sub'>
+          <li>
+            <a class='section-link' data-scroll='' href='#component'>
+              component
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#transition'>
+              transition
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#transition-group'>
+              transition-group
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#keep-alive'>
+              keep-alive
+            </a>
+          </li>
+          <li>
+            <a class='section-link' data-scroll='' href='#slot-1'>
+              slot
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='v-model modifiers'>
+        <a>
+          v-model 
+          <small>
+            Modifiers
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
+              <small>
+                v-model
+              </small>
+              .lazy
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
+              <small>
+                v-model
+              </small>
+              .number
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
+              <small>
+                v-model
+              </small>
+              .trim
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='mouse modifiers'>
+        <a>
+          Mouse 
+          <small>
+            Modifiers
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .left 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .right 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .middle 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='v-bind modifiers'>
+        <a>
+          v-bind 
+          <small>
+            Modifiers
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/api/#v-bind'>
+              <small>
+                v-bind
+              </small>
+              .prop
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/api/#v-bind'>
+              <small>
+                v-bind
+              </small>
+              .camel 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='event modifiers'>
+        <a>
+          Event 
+          <small>
+            Modifiers
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/guide/components.html#Using-v-on-with-Custom-Events'>
+              <small>
+                v-on:click
+              </small>
+              .native
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .stop
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .prevent
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .capture
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .self
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .once 
+              <var>
+                2.1.4
+              </var>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='keyboard modifiers'>
+        <a>
+          Keyboard 
+          <small>
+            Modifiers
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+              <small>
+                v-on:keyup
+              </small>
+              .ctrl 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+              <small>
+                v-on:keyup
+              </small>
+              .alt 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+              <small>
+                v-on:keyup
+              </small>
+              .shift 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
+              <small>
+                v-on:keyup
+              </small>
+              .meta 
+              <var>
+                2.1
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .enter
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .tab
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .delete
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .esc
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .up
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .down
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .left
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
+              <small>
+                v-on:keyup
+              </small>
+              .right
+            </a>
+          </li>
+        </ul>
       </li>
     </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Global-API'>
-      <small>
-        Global
-      </small>
-       API
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-extend'>
-          Vue.extend
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-nextTick'>
-          Vue.nextTick
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-set'>
-          Vue.set
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-delete'>
-          Vue.delete
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-directive'>
-          Vue.directive
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-filter'>
-          Vue.filter
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-component'>
-          Vue.component
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-use'>
-          Vue.use
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-mixin'>
-          Vue.mixin
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-compile'>
-          Vue.compile
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#Vue-version'>
-          Vue.version
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Options-Data'>
-      <small>
-        Options
-      </small>
-       Data
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#data'>
-          data
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#props'>
-          props
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#propsData'>
-          propsData
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#computed'>
-          computed
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#methods'>
-          methods
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#watch'>
-          watch
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Options-DOM'>
-      <small>
-        Options
-      </small>
-       DOM
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#el'>
-          el
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#template'>
-          template
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#render'>
-          render
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#renderError'>
-          renderError 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Options-Lifecycle-Hooks'>
-      <small>
-        Options
-      </small>
-       Lifecycle Hooks
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#beforeCreate'>
-          beforeCreate
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#created'>
-          created
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#beforeMount'>
-          beforeMount
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#mounted'>
-          mounted
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#beforeUpdate'>
-          beforeUpdate
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#updated'>
-          updated
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#activated'>
-          activated
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#deactivated'>
-          deactivated
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#beforeDestroy'>
-          beforeDestroy
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#destroyed'>
-          destroyed
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Options-Assets'>
-      <small>
-        Options
-      </small>
-       Assets
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#directives'>
-          directives
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#filters'>
-          filters
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#components'>
-          components
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Options-Composition'>
-      <small>
-        Options
-      </small>
-       Composition
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#parent'>
-          parent
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#mixins'>
-          mixins
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#extends'>
-          extends
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#provide-inject'>
-          provide / inject 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Options-Misc'>
-      <small>
-        Options
-      </small>
-       Misc
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#name'>
-          name
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#delimiters'>
-          delimiters
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#functional'>
-          functional
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#model'>
-          model 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Instance-Properties'>
-      <small>
-        Instance
-      </small>
-       Properties
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-data'>
-          vm.$data
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-props'>
-          vm.$props 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-el'>
-          vm.$el
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-options'>
-          vm.$options
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-parent'>
-          vm.$parent
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-root'>
-          vm.$root
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-children'>
-          vm.$children
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-slots'>
-          vm.$slots
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-scopedSlots'>
-          vm.$scopedSlots 
-          <var>
-            2.1
-          </var>
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-refs'>
-          vm.$refs
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-isServer'>
-          vm.$isServer
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Instance-Methods-Data'>
-      <small>
-        Methods
-      </small>
-       Data
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-watch'>
-          vm.$watch
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-set'>
-          vm.$set
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-delete'>
-          vm.$delete
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Instance-Methods-Events'>
-      <small>
-        Methods
-      </small>
-       Events
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-on'>
-          vm.$on
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-once'>
-          vm.$once
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-off'>
-          vm.$off
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-emit'>
-          vm.$emit
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Instance-Methods-Lifecycle'>
-      <small>
-        Methods
-      </small>
-       Lifecycle
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-mount'>
-          vm.$mount
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-forceUpdate'>
-          vm.$forceUpdate
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-nextTick'>
-          vm.$nextTick
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#vm-destroy'>
-          vm.$destroy
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Directives'>
-      <small>
-        html
-      </small>
-       Directives
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-text'>
-          v-text
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-html'>
-          v-html
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-show'>
-          v-show
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-if'>
-          v-if
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-else'>
-          v-else
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-else-if'>
-          v-else-if 
-          <var>
-            2.1
-          </var>
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-for'>
-          v-for
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-on'>
-          v-on
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-bind'>
-          v-bind
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-model'>
-          v-model
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-pre'>
-          v-pre
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-cloak'>
-          v-cloak
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#v-once'>
-          v-once
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Special-Attributes'>
-      <small>
-        html
-      </small>
-       Attributes
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#key'>
-          key
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#ref'>
-          ref
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#slot'>
-          slot
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a class='section-link' data-scroll='' href='#Built-In-Components'>
-      <small>
-        Built-In
-      </small>
-       Components
-    </a>
-    <ul class='menu-sub'>
-      <li>
-        <a class='section-link' data-scroll='' href='#component'>
-          component
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#transition'>
-          transition
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#transition-group'>
-          transition-group
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#keep-alive'>
-          keep-alive
-        </a>
-      </li>
-      <li>
-        <a class='section-link' data-scroll='' href='#slot-1'>
-          slot
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a>
-      Keyboard 
-      <small>
-        Modifiers
-      </small>
-    </a>
-    <ul>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
-          <small>
-            v-on:keyup
-          </small>
-          .ctrl 
-          <var>
-            2.1
-          </var>
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
-          <small>
-            v-on:keyup
-          </small>
-          .alt 
-          <var>
-            2.1
-          </var>
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
-          <small>
-            v-on:keyup
-          </small>
-          .shift 
-          <var>
-            2.1
-          </var>
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Modifier-Keys'>
-          <small>
-            v-on:keyup
-          </small>
-          .meta 
-          <var>
-            2.1
-          </var>
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .enter
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .tab
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .delete
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .esc
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .up
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .down
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .left
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Key-Modifiers'>
-          <small>
-            v-on:keyup
-          </small>
-          .right
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a>
-      v-model 
-      <small>
-        Modifiers
-      </small>
-    </a>
-    <ul>
-      <li>
-        <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
-          <small>
-            v-model
-          </small>
-          .lazy
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
-          <small>
-            v-model
-          </small>
-          .number
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/forms.html#Modifiers'>
-          <small>
-            v-model
-          </small>
-          .trim
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a>
-      Event 
-      <small>
-        Modifiers
-      </small>
-    </a>
-    <ul>
-      <li>
-        <a href='https://vuejs.org/v2/guide/components.html#Using-v-on-with-Custom-Events'>
-          <small>
-            v-on:click
-          </small>
-          .native
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .stop
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .prevent
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .capture
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .self
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .once 
-          <var>
-            2.1.4
-          </var>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a>
-      Mouse 
-      <small>
-        Modifiers
-      </small>
-    </a>
-    <ul>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .left 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .right 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-      <li>
-        <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
-          <small>
-            v-on:click
-          </small>
-          .middle 
-          <var>
-            2.2
-          </var>
-        </a>
-      </li>
-    </ul>
-  </li>
-</ul>
+  </body>
+</html>
 
     <a href="https://github.com/vuejs-tips/cheatsheet" class="github-corner" aria-label="View source on Github"><svg width="60" height="60" viewBox="0 0 250 250" style="cursor: pointer;z-index: -1;fill:#fff; color:#151513; position: absolute; bottom: 0; border: 0; right: 0; transform: scale(1, -1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
