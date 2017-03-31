@@ -220,6 +220,13 @@ a {
     font-size: 18px;
   }
 
+  .menu-root > li:nth-child(8)
+  ,.menu-root > li:nth-child(16)
+  ,.menu-root > li:nth-child(19)
+   {
+    break-after: column;
+  }
+
   .menu-root ul li {
     margin-bottom: 5px;
   }
@@ -230,14 +237,14 @@ a {
 }
 
 @media screen and (min-width : 1920px) {
-  .menu-root > li:nth-child(8)
-  ,.menu-root > li:nth-child(16)
-   {
-    break-after: column;
-  }
-
   a {
     padding: 10px 5px;
     line-height: 15px;
+  }
+}
+
+@media print {
+  .github-corner {
+    display: none;
   }
 }

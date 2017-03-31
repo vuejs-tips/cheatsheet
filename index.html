@@ -236,6 +236,13 @@ a {
     font-size: 18px;
   }
 
+  .menu-root > li:nth-child(8)
+  ,.menu-root > li:nth-child(16)
+  ,.menu-root > li:nth-child(19)
+   {
+    break-after: column;
+  }
+
   .menu-root ul li {
     margin-bottom: 5px;
   }
@@ -246,15 +253,15 @@ a {
 }
 
 @media screen and (min-width : 1920px) {
-  .menu-root > li:nth-child(8)
-  ,.menu-root > li:nth-child(16)
-   {
-    break-after: column;
-  }
-
   a {
     padding: 10px 5px;
     line-height: 15px;
+  }
+}
+
+@media print {
+  .github-corner {
+    display: none;
   }
 }
 
@@ -978,49 +985,6 @@ a {
           </li>
         </ul>
       </li>
-      <li class='mouse modifiers'>
-        <a>
-          Mouse 
-          <small>
-            Modifiers
-          </small>
-        </a>
-        <ul>
-          <li>
-            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
-              <small>
-                v-on:click
-              </small>
-              .left 
-              <var>
-                2.2
-              </var>
-            </a>
-          </li>
-          <li>
-            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
-              <small>
-                v-on:click
-              </small>
-              .right 
-              <var>
-                2.2
-              </var>
-            </a>
-          </li>
-          <li>
-            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
-              <small>
-                v-on:click
-              </small>
-              .middle 
-              <var>
-                2.2
-              </var>
-            </a>
-          </li>
-        </ul>
-      </li>
       <li class='v-bind modifiers'>
         <a>
           v-bind 
@@ -1106,6 +1070,49 @@ a {
               .once 
               <var>
                 2.1.4
+              </var>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='mouse modifiers'>
+        <a>
+          Mouse 
+          <small>
+            Modifiers
+          </small>
+        </a>
+        <ul>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .left 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .right 
+              <var>
+                2.2
+              </var>
+            </a>
+          </li>
+          <li>
+            <a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'>
+              <small>
+                v-on:click
+              </small>
+              .middle 
+              <var>
+                2.2
               </var>
             </a>
           </li>

@@ -6,14 +6,6 @@
     </ul>
   </li>
 
-  <li class="mouse modifiers"><a>Mouse <small>Modifiers</small></a>
-    <ul>
-      <li><a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'><small>v-on:click</small>.left <var>2.2</var></a></li>
-      <li><a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'><small>v-on:click</small>.right <var>2.2</var></a></li>
-      <li><a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'><small>v-on:click</small>.middle <var>2.2</var></a></li>
-    </ul>
-  </li>
-
   <li class="v-bind modifiers"><a>v-bind <small>Modifiers</small></a>
     <ul>
       <li><a href='https://vuejs.org/v2/api/#v-bind'><small>v-bind</small>.prop</a></li>
@@ -29,6 +21,14 @@
       <li><a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'><small>v-on:click</small>.capture</a></li>
       <li><a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'><small>v-on:click</small>.self</a></li>
       <li><a href='https://vuejs.org/v2/guide/events.html#Event-Modifiers'><small>v-on:click</small>.once <var>2.1.4</var></a></li>
+    </ul>
+  </li>
+
+  <li class="mouse modifiers"><a>Mouse <small>Modifiers</small></a>
+    <ul>
+      <li><a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'><small>v-on:click</small>.left <var>2.2</var></a></li>
+      <li><a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'><small>v-on:click</small>.right <var>2.2</var></a></li>
+      <li><a href='https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers'><small>v-on:click</small>.middle <var>2.2</var></a></li>
     </ul>
   </li>
 
