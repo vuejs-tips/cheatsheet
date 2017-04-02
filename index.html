@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" />
     <link rel="icon" href="favico.png" type="image/x-icon">
 <style>
-body {
+html, body {
   background-color: #343D46;
+}
+body {
   color: white;
   font-size: 16px;
   font-family: Helvetica, Arial;
@@ -230,7 +232,7 @@ a {
   }
 }
 
-@media print, (min-width : 1920px) {
+@media print and (min-width : 1920px) {
   .menu-root {
     column-count: 9;
     font-size: 18px;
@@ -249,6 +251,17 @@ a {
 
   body {
     overflow: hidden;
+  }
+}
+
+@media print and (max-width : 1920px) {
+  .menu-root > li:nth-child(8)
+   {
+    break-after: column;
+  }
+
+  body {
+    padding-bottom: 10px;
   }
 }
 
