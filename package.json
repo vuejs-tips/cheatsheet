@@ -1,9 +1,13 @@
 {
   "name": "cheat-sheet",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Vue.js complete API Cheat Sheet",
   "main": "index.js",
-  "keywords": ["vue", "vuejs", "cheatsheet"],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "cheatsheet"
+  ],
   "author": "Marcos Neves <marcos.neves@gmail.com> (http://neves.github.io/)",
   "license": "MIT",
   "scripts": {
@@ -12,6 +16,7 @@
     "dev": "nodemon -V -e '*' -w src src/build.rb"
   },
   "devDependencies": {
-    "nightmare": "^2.10.0"
+    "nightmare": "^2.10.0",
+    "nodemon": "^1.11.0"
   }
 }
